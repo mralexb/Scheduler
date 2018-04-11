@@ -1,0 +1,21 @@
+body {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.content {
+    width: 100%;
+    min-height: 400px;
+    background-color: #800080;
+    padding: 20px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-Splash {
+    display: inline-block;
+    width: 40%;
+}

@@ -19,3 +19,7 @@ body {
     display: inline-block;
     width: 40%;
 }
+.spacer {
+  display: inline-block;
+  padding-top: 20%;
+}

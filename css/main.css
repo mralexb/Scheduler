@@ -1,28 +1,31 @@
+html body {
+    height: 100%;
+}
+
 body {
-    max-width: 1280px;
+    background-color: #006134; /* we can change this to whatever you want. I just picked the school colors. */
     margin: auto;
 }
 
 .content {
-    width: 100%;
-    min-height: 400px;
     background-color: #800080;
+    text-align: center;
     padding: 20px;
     margin: auto;
+    height: 95vh;
+    width: 95vw;
+    margin-top: 2.5vh;
+    /* vh is a relative unit. 95 vh means 95% of the total vertical height of the window. This is an adaptive unit. It is NOT a relative unit however */
 }
-
-.center {
-    text-align: center;
-}
-
 .btn-Splash {
     display: inline-block;
     width: 40%;
-    height: 0;
-    padding-bottom: 30%;
     border-radius: 50%;
-    border: 2px solid #f5f5f5;
     overflow: hidden;
-    box-shadow: 0 0 3px gray;
-    font-size: 100%;
+    line-height: 70vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 10vh;
+    font-size: 2em; /* thought we could use a better font size and family*/
+    font-family: monospace;
 }

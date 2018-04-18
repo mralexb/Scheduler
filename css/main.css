@@ -3,12 +3,12 @@ html body {
 }
 
 body {
-    background-color: #006134; /* we can change this to whatever you want. I just picked the school colors. */
+    background-color: #8b0000;
     margin: auto;
 }
 
 .content {
-    background-color: #800080;
+    background-color: #ffffff;
     text-align: center;
     padding: 20px;
     margin: auto;
@@ -17,7 +17,7 @@ body {
     margin-top: 2.5vh;
     /* vh is a relative unit. 95 vh means 95% of the total vertical height of the window. This is an adaptive unit. It is NOT a relative unit however */
 }
-.btn-Splash {
+.btn-Splash { /* Please view the buttons as they are now on mobile. They are enormous ovals. Needs to be modified */
     display: inline-block;
     width: 40%;
     border-radius: 50%;
@@ -28,4 +28,5 @@ body {
     margin-top: 10vh;
     font-size: 2em; /* thought we could use a better font size and family*/
     font-family: monospace;
+    background-color: #8b0000; /* updated color scheme to SU school colors (red and white) Probably change it later on. */
 }

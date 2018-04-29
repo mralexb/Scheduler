@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial Scheduling Made Easy</title>
     <link href="css/reset.css" rel="stylesheet" />
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -9,10 +10,16 @@
     <link href="css/main.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="content"> <!-- We need to modify this so the buttions are centered, Circular, and always take up most of the screen -->
-        <div class="buttons">
-        <a href="#" id="student" role="button" class="btn btn-primary btn-Splash">STUDENT</a>
-        <a href="#" id="TUTOR" role="button" class="btn btn-primary btn-Splash">TUTOR</a>
+    <div class="container content vertical-center">
+        <div class="round-button">
+            <div class="round-button-circle">
+                <a href="#student" id="student" role="button" class="round-button">STUDENT</a>
+            </div>
+        </div>
+        <div class="round-button">
+            <div class="round-button-circle">
+                <a href="#tutor" id="tutor" role="button" class="round-button">TUTOR</a>
+            </div>
         </div>
     </div>
   </body>

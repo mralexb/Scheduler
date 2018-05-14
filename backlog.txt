@@ -1,0 +1,17 @@
+Backlog:
+Splash Screen
+
+Functional Database and accompanying creation script
+
+Design layout for the scheduling app of webapp
+
+CSS for Student and Teacher view of site
+
+Backend for PHP to run app (CMS essentially)
+
+
+
+Functionality list:
+students can schedule tutorials for teachers
+Teachers can create schedules and accept tutorials for students
+Tutorials can be individual or group --Notice group is a new desired function.

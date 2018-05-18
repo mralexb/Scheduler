@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 16, 2018 at 03:06 PM
+-- Generation Time: May 18, 2018 at 01:32 PM
 -- Server version: 5.7.22-0ubuntu0.17.10.1
 -- PHP Version: 7.1.17-0ubuntu0.17.10.1
 
@@ -27,8 +27,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `appointment` (
-  `appointment` datetime DEFAULT NULL,
-  `studentid` bigint(11) DEFAULT NULL,
+  `appointment` datetime NOT NULL,
+  `studentid` bigint(11) NOT NULL,
   `studentname` varchar(30) DEFAULT NULL,
   `teacherid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -53,6 +53,7 @@ CREATE TABLE `teacher` (
 -- Indexes for table `appointment`
 --
 ALTER TABLE `appointment`
+  ADD PRIMARY KEY (`appointment`,`studentid`),
   ADD KEY `teacherid` (`teacherid`);
 
 --

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This will set the EM heights and put the page to the right size on load-->
+    <title>Tutorial Scheduling Made Easy</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <!--load the jQuery library to make life easier-->
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script>
+        $(document).ready(function() { //this is a jQuery function that causes the page to finish loading BEFORE executing this code
+
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "controller.php?q=professor", true); //creates the request, not this is asynchronous, and should probably stay that way
+            xmlhttp.send(); //sends the request. returns results as soon as it sent. results are given using the event
+            xmlhttp.onreadystatechange = function() { //event listener to use the results
+                if (this.readyState == 4 && this.status == 200) { //makes sure nothing happens until the request is FINISHED
+                    $("professorList").innerHTML = this.responseText; //creates the dropdown if everythign is returned properly
+                }
+            }
+        });
+
+        function createTable() {
+            var professor = $("professor").value;
+            var xmlhttp2 = new XMLHttpRequest();
+            xmlhttp2.open("GET", "controller.php?q=" + professor, true);
+            xmlhttp2.send();
+            xmlhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) { //makes sure nothing happens until the request is FINISHED
+                    //create some way of selecting the apointment time
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container content">
+        <!--primary layout control-->
+        <h3 class="center">Student Appointment Scheduler</h3>
+
+        <!--THIS STIL NEEDS A FORM TAG! I will put it in within a day or two. This also doesn't have the option yet to handle group tutorials, but I will get to that. It's actually really easy-->
+        <p class="formLabel">Please type your name: </p>
+        <input type="text" name="studentName" id="studentName" placeholder="Your Name " />
+
+        <p class="formLabel">Please type your student id number:</p>
+        <input type="text" name="studentID" id="studentID" placeholder="Your ID Number " />
+
+        <p class="formLabel">Please select your professor</p>
+        <select name="professor" id="professorList">
+            <!--Function above should replace this comment and populate the list-->
+        </select>
+        <div></div>
+        <!--placeholder to represent the time selection-->
+        <input type="submit" class="btn btn-primary" />
+    </div>
+</body>
+
+</html>

@@ -15,11 +15,12 @@ input {
 .content {
     background-color: white;
     box-sizing: border-box;
-    max-width: 90%;
     margin: auto;
     margin-top: 4%;
     margin-bottom: 4%;
     border-radius: 25px;
+    overflow: hidden;
+    /*stops the ugly buttons out of box problem*/
 }
 
 
@@ -51,7 +52,7 @@ input {
     height: 0;
     padding-bottom: 100%;
     /*DO NOT CHANGE THIS*/
-    border-radius: 50%;
+    border-radius: 20%;
     border: 2px solid #AA3030;
     overflow: hidden;
     background: #8b0000;

@@ -1,12 +1,15 @@
 Backlog:
   Splash Screen-
-    Change buttons to rounded Squares
     less surrounding padding
 
 Decide on location of SU/OBU/CDUT logos for
   Splash Screen
   teacher view
   student view
+
+SQL Database
+  Professor/Teacher --> tutor
+  Add appointment availability to database
 
 Design Teacher layout
 
@@ -26,8 +29,12 @@ Functionality list:
   Tutorials can be individual or group --Notice group is a new desired function.
   Webapp is dynamically generated
 
+In Progress:
+  Tutor choice should now populate if put on a live demo.
+
 Completion Log: (Please move finished backlog items here)
   Functional Database and accompanying creation script
   Update database to allow for group tutorials without impacting redundancy
   Design Student layout
-  Professor -> Tutor
+  Professor -> Tutor -- You did not change this in the SQL.
+  Change buttons to rounded Squares

@@ -17,19 +17,19 @@
         $(document).ready(function() { //this is a jQuery function that causes the page to finish loading BEFORE executing this code
 
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", "controller.php?q=professor", true); //creates the request, not this is asynchronous, and should probably stay that way
+            xmlhttp.open("GET", "controller.php?q=tutor", true); //creates the request, not this is asynchronous, and should probably stay that way
             xmlhttp.send(); //sends the request. returns results as soon as it sent. results are given using the event
             xmlhttp.onreadystatechange = function() { //event listener to use the results
                 if (this.readyState == 4 && this.status == 200) { //makes sure nothing happens until the request is FINISHED
-                    $("professorList").innerHTML = this.responseText; //creates the dropdown if everythign is returned properly
+                    $("tutorList").innerHTML = this.responseText; //creates the dropdown if everythign is returned properly
                 }
             }
         });
 
         function createTable() {
-            var professor = $("professor").value;
+            var tutor = $("tutor").value;
             var xmlhttp2 = new XMLHttpRequest();
-            xmlhttp2.open("GET", "controller.php?q=" + professor, true);
+            xmlhttp2.open("GET", "controller.php?q=" + tutor, true);
             xmlhttp2.send();
             xmlhttp2.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) { //makes sure nothing happens until the request is FINISHED
@@ -53,8 +53,8 @@
         <p class="formLabel">Please type your student id number:</p>
         <input type="text" name="studentID" id="studentID" placeholder="Your ID Number " />
 
-        <p class="formLabel">Please select your professor</p>
-        <select name="professor" id="professorList">
+        <p class="formLabel">Please select your tutor</p>
+        <select name="tutor" id="tutorList">
             <!--Function above should replace this comment and populate the list-->
         </select>
         <div></div>

@@ -11,7 +11,7 @@ Decide on location of SU/OBU/CDUT logos for
 Design Teacher layout
 
 Student Layout Revisions:
-  -Professor -> Tutor
+
   -Add introduction?
 
 Design PHP Functionality
@@ -30,3 +30,4 @@ Completion Log: (Please move finished backlog items here)
   Functional Database and accompanying creation script
   Update database to allow for group tutorials without impacting redundancy
   Design Student layout
+  Professor -> Tutor

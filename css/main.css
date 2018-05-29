@@ -42,7 +42,7 @@ input {
     /*class for button container */
     width: 25%;
     text-align: center;
-    margin: 2.5%;
+    margin: 10%;
     /*controls the spacing between the buttons*/
 }
 
@@ -89,4 +89,9 @@ input {
 .formLabel {
     display: inline-block;
     margin: 1%;
+}
+
+#studentInfo {
+    border: 2px solid #AA3030;
+    border-radius: 5%;
 }

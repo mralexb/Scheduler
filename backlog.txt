@@ -26,7 +26,6 @@ Design PHP Functionality
 Functionality list:
   students can schedule tutorials for teachers
   Teachers can create schedules and accept tutorials for students
-  Tutorials can be individual or group --Notice group is a new desired function.
   Webapp is dynamically generated
 
 In Progress:
@@ -38,3 +37,4 @@ Completion Log: (Please move finished backlog items here)
   Design Student layout
   Professor -> Tutor -- You did not change this in the SQL.
   Change buttons to rounded Squares
+  Tutorials can be individual or group --Notice group is a new desired function.

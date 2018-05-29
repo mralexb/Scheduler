@@ -14,6 +14,7 @@
     <link href="css/main.css" rel="stylesheet" />
 
     <script>
+        var students = 1
         $(document).ready(function() { //this is a jQuery function that causes the page to finish loading BEFORE executing this code
 
             var xmlhttp = new XMLHttpRequest();
@@ -37,6 +38,13 @@
                 }
             }
         }
+
+        function createStudent() {
+            $("#studentInfo").append(
+                '<br><p class="formLabel">Please type your name: </p> <input type="text" name="studentName' + students + '" id="studentName' + students + '" placeholder="Your Name " /><p class="formLabel">Please type your student ID number: </p> <input type="text" name="studentID' + students + '" id="studentID' + students + '" placeholder="Your Student ID " />'
+            )
+            students += 1;
+        }
     </script>
 
 </head>
@@ -45,18 +53,24 @@
     <div class="container content">
         <!--primary layout control-->
         <h3 class="center">Student Appointment Scheduler</h3>
-
+        <p>Insert instructions/introduction here.</p>
         <!--THIS STIL NEEDS A FORM TAG! I will put it in within a day or two. This also doesn't have the option yet to handle group tutorials, but I will get to that. It's actually really easy-->
-        <p class="formLabel">Please type your name: </p>
-        <input type="text" name="studentName" id="studentName" placeholder="Your Name " />
 
-        <p class="formLabel">Please type your student id number:</p>
-        <input type="text" name="studentID" id="studentID" placeholder="Your ID Number " />
+        <div id="studentInfo">
+            <p class="formLabel">Please type your name: </p>
+            <input type="text" name="studentName" id="studentName" placeholder="Your Name " />
 
-        <p class="formLabel">Please select your tutor</p>
-        <select name="tutor" id="tutorList">
-            <!--Function above should replace this comment and populate the list-->
-        </select>
+            <p class="formLabel">Please type your student id number:</p>
+            <input type="text" name="studentID" id="studentID" placeholder="Your ID Number " />
+        </div>
+        <input type="submit" class="btn btn-secondary" value="Add Student" onclick="createStudent()">
+
+        <div id="tutorInformation">
+            <p class="formLabel">Please select your tutor</p>
+            <select name="tutor" id="tutorList">
+                <!--Function above should replace this comment and populate the list-->
+            </select>
+        </div>
         <div></div>
         <!--placeholder to represent the time selection-->
         <input type="submit" class="btn btn-primary" />

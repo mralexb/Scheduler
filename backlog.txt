@@ -1,26 +1,29 @@
 Backlog:
+
   Splash Screen-
     less surrounding padding
 
-Decide on location of SU/OBU/CDUT logos for
-  Splash Screen
-  teacher view
-  student view
+  Decide on location of SU/OBU/CDUT logos for
+    Splash Screen
+    teacher view
+    student view
 
-SQL Database
-  Professor/Teacher --> tutor
-  Add appointment availability to database
+  SQL Database
+    Professor/Teacher --> tutor
+    Add appointment availability to database
 
-Design Teacher layout
+  Design Teacher layout
 
-Student Layout Revisions:
+  Student Layout Revisions:
+    -Add introduction?
 
-  -Add introduction?
-
-Design PHP Functionality
-  Barebones pages (redundant code OK)
-  Query database for basic scheduling info (fully Functional)
-  Transfer HTML to PHP documents
+  Design PHP Functionality
+    Design PHP files for basic functionality (
+      -dynamically load student/teacher view
+      -First generation query scrip(s)
+    )
+    Query database for basic scheduling info (fully Functional)
+    Transfer HTML to PHP documents
 
 
 Functionality list:

@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 if ($q == "tutor") {
     $sql = "SELECT teacher FROM teacher";
     $result = $conn->query($sql);
-    while ($row = $result->fetch_assoc())) {
+    while ($row = $result->fetch_assoc())) { //error with this row.
         echo '<option value="' .$row["teacher"]. '">' .$row["teacher"].'</option>';
     }
 }

@@ -1,79 +1,56 @@
-<!DOCTYPE html>
+<!doctype HTML>
+
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--This will set the EM heights and put the page to the right size on load-->
-    <title>Tutorial Scheduling Made Easy</title>
+    <meta neame="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic University Name Student Schedule View</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/student.css">
     <script src="js/jquery-3.3.1.js"></script>
-    <!--load the jQuery library to make life easier-->
-    <link href="css/reset.css" rel="stylesheet" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap-grid.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
-
-    <script>
-        var students = 1
-        $(document).ready(function() { //this is a jQuery function that causes the page to finish loading BEFORE executing this code
-
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", "controller.php?q=tutor", true); //creates the request, not this is asynchronous, and should probably stay that way
-            xmlhttp.send(); //sends the request. returns results as soon as it sent. results are given using the event
-            xmlhttp.onreadystatechange = function() { //event listener to use the results
-                if (this.readyState == 4 && this.status == 200) { //makes sure nothing happens until the request is FINISHED
-                    $("tutorList").innerHTML = this.responseText; //creates the dropdown if everythign is returned properly
-                }
-            }
-        });
-
-        function createTable() {
-            var tutor = $("tutor").value;
-            var xmlhttp2 = new XMLHttpRequest();
-            xmlhttp2.open("GET", "controller.php?q=" + tutor, true);
-            xmlhttp2.send();
-            xmlhttp2.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) { //makes sure nothing happens until the request is FINISHED
-                    //create some way of selecting the apointment time
-                }
-            }
-        }
-
-        function createStudent() {
-            $("#studentInfo").append(
-                '<br><p class="formLabel">Please type your name: </p> <input type="text" name="studentName' + students + '" id="studentName' + students + '" placeholder="Your Name " /><p class="formLabel">Please type your student ID number: </p> <input type="text" name="studentID' + students + '" id="studentID' + students + '" placeholder="Your Student ID " />'
-            )
-            students += 1;
-        }
-    </script>
-
+    <script src="js/student.js"></script>
 </head>
 
 <body>
-    <div class="container content">
-        <!--primary layout control-->
-        <h3 class="center">Student Appointment Scheduler</h3>
-        <p>Insert instructions/introduction here.</p>
-        <!--THIS STIL NEEDS A FORM TAG! I will put it in within a day or two. This also doesn't have the option yet to handle group tutorials, but I will get to that. It's actually really easy-->
+    <div class="container">
+        <header>
+            <h1 class="logohead">University Name</h1> <img src="logo.png" alt="universty logo" />
+        </header>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque interdum nisi at porttitor. Maecenas vel finibus erat. Fusce iaculis, odio et commodo suscipit, risus sem mattis odio, ut posuere ante orci sollicitudin mauris.
+                Nulla imperdiet tellus at ante cursus efficitur. Donec ac orci fringilla, pharetra nisl in, venenatis dui. Fusce leo turpis, vehicula vitae massa id, aliquam pharetra nisi. Quisque libero tortor, condimentum ut cursus at, posuere eget
+                arcu. Phasellus porta nulla non turpis tempor mollis. In et sapien quis augue hendrerit mollis. Etiam ante eros, tempus tincidunt purus a, vestibulum tempus quam. Fusce et sollicitudin sapien. Proin pretium velit vitae sem mollis blandit.
+                Vivamus porttitor ante nec ligula cursus, ut ornare quam sollicitudin.
+            </p>
 
-        <div id="studentInfo">
-            <p class="formLabel">Please type your name: </p>
-            <input type="text" name="studentName" id="studentName" placeholder="Your Name " />
+            <form method="post" action="formHandler.php">
+                <!-- formHandler.php should be replaced with whatever is appropriate to call for when the form is submitted -->
+                <div id="studentInfo">
+                    <label for="studentName">Name:</label>
+                    <input type="text" name="studentName" id="studentName" placeholder="Your Name " />
 
-            <p class="formLabel">Please type your student id number:</p>
-            <input type="text" name="studentID" id="studentID" placeholder="Your ID Number " />
+                    <label for="studentID">Student ID Number:</label>
+                    <input type="text" name="studentID" id="studentID" placeholder="Your ID Number " />
+                </div>
+                <button type="button" onclick="createStudent()">+Student</button>
+                <div id="tutorInformation">
+                    <label for="tutor">Tutor Name:</label>
+                    <select name="tutor" id="tutorList" onchange="serverFunctionTutors()">
+                    <!--On Load Function should replace this comment and populate the list of tutors-->
+                </select>
+                    <!-- What is the return of the function that executes when the student selects a tutor? A list of classes, a list of dates and times, the Analects of Confucious? -->
+
+                    <!-- When that question is answered, more form elements will go here based on what that is. If it returns a class list, for example, another select would make sense. If it can return
+the available times directly then either a grid or checkbox or something would make more sense. I need to know what kinds of elements are needed so they can be placeholdered properly-->
+                </div>
+                <button type="submit">Make an Appointment</button>
+                <!-- clicking here will send the form info to whatever PHP handler you set up. You could write it as <?php echo $_SERVER['PHP_SELF']; ?> if you wanted
+but you need to understand that the form will pass the information as studentName=___&studentID=___&tutor=___ ...until it runs out of named elements. Therefore, the form should have as FEW inputs as possible
+to capture the choices the student is making.-->
+            </form>
+
         </div>
-        <input type="submit" class="btn btn-secondary" value="Add Student" onclick="createStudent()">
-
-        <div id="tutorInformation">
-            <p class="formLabel">Please select your tutor</p>
-            <select name="tutor" id="tutorList">
-                <!--Function above should replace this comment and populate the list-->
-            </select>
-        </div>
-        <div></div>
-        <!--placeholder to represent the time selection-->
-        <input type="submit" class="btn btn-primary" />
     </div>
 </body>
 

@@ -30,7 +30,7 @@ Functionality list:
   students can schedule tutorials for teachers
   Teachers can create schedules and accept tutorials for students
   Webapp is dynamically generated
-
+  Teachers and students can submit feedback via a feedback form
 In Progress:
   Tutor choice should now populate if put on a live demo.
 

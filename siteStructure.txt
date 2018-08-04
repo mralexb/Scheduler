@@ -1,0 +1,21 @@
+index.php -> Index will be the switch for dynamic views, of which there will be three primary views: splash, teacherHome, studentHome.
+Will need to generate 3 view phps for each view type.
+Navigation bar: should be view dependent. nesting options (teacherHome->newTutorialTime). Can click breadcrumbs to navigate back to home. Can also toggle to student view via navigation breadcrumbs
+CSS sheets needed: teacher, student, navigation, splash. Keep each css sheet separate for modularity.
+
+
+File Structure after update:
+
+/views/
+/views/splash.php
+/views/student.php
+/views/teacher.php
+/views/navigation.php
+
+/css/
+/css/splash.css
+/css/student.css
+/css/teacher.css
+/css/navigation.css
+
+index.php

@@ -1,0 +1,19 @@
+Tables:
+Schedule
+  columns:
+    primary key
+    Datetime
+    duration (length of the tutorial, used to calculate input and outputs for db in browser)
+    teacherid(foreign key)
+    student id/name (maybe just varchar this)
+
+
+
+Teacher-
+  teacher id
+  emailaddress
+
+Password?
+  primary key
+  teacherid(foreign key)
+  password? (this will be for initial use only. need to research hashing and stronger pw verification later)
